@@ -1,26 +1,43 @@
-# Simple Weather API in Kotlin integrated with [AccuWeather](https://developer.accuweather.com/)
+# ️ 🌦️ Kotlin AccuWeather API
 
-### How to run app
+---
 
-To run application you need to provide these env variables:
+## ✅ Features
 
-- `ACCU_WEATHER_URL` its `http://dataservice.accuweather.com`
-- `ACCU_WEATHER_API_KEY` ( to obtain this key, you have to create an account and receive unique key )
+- ✅ Kotlin 2.x + Spring Boot 3.x
+- 🧪 Maven build and tests
+- 📦 Environment-based configuration
 
-### Technology stack:
+---
 
-- Kotlin 1.9, Java 17
-- Spring Boot 3.4
-- Feign ( integration with AccuWeather )
+## 🏁 Getting Started
 
-### Database:
+### 🔧 Prerequisites
 
-- MongoDB ( to save weather data ) --- TODO
-- Mongock ( create migrations with indexes ) --- TODO
+- Java 17+
+- Maven 3+
 
-### Tests stack:
+---
 
-- Junit
-- WebMVC test --- TODO
-- MongoDataTest --- TODO
-- WireMock test --- TODO
+## ⚙️  Environment variables
+To run app locally on IDE or docker image, please provide file with these variables:
+- **ACCU_WEATHER_URL**=`url required to connect with accuweather`
+- **ACCU_WEATHER_API_KEY**=`your unique accuweather api key`
+- **MONGO_DB_URL**=`MongoDB url connection string`
+
+## ⚙️ Build & Run
+
+### 🛠 Build the project
+
+- With tests:`mvn clean install`
+- Without tests:`mvn clean install -DskipTests`
+
+## 🧪 Running tests
+To run all tests use:
+```bash
+mvn test
+```
+
+## 🧑‍💻 Author
+
+Maintained by [Krystian Witek](https://pl.linkedin.com/in/kw9531) – Kotlin Backend Developer
