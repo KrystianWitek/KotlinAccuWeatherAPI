@@ -1,0 +1,15 @@
+spring:
+  data:
+    mongodb:
+      uri: ${MONGO_DB_URL}
+  config:
+    import: optional:file:.env.local[.properties]
+
+accuweather:
+  apikey: ${ACCU_WEATHER_API_KEY}
+  url: ${ACCU_WEATHER_URL}
+
+logging:
+  level:
+    com.witek.weatherapi: DEBUG
+    org.zalando.logbook: TRACE
