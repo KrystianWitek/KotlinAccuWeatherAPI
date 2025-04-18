@@ -4,12 +4,12 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
 @Configuration
-class AccuWeatherConfig(
+open class AccuWeatherConfig(
     private val client: AccuWeatherClient,
     private val properties: AccuWeatherProperties
 ) {
 
     @Bean
-    fun accuWeatherService(): AccuWeatherService =
+    open fun accuWeatherService(): AccuWeatherService =
         AccuWeatherService(client, properties)
 }

@@ -6,11 +6,11 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
 @Configuration
-class FeignConfig {
+open class FeignConfig {
 
     @Bean
-    fun feignLoggerLevel(): Logger.Level = Logger.Level.FULL
+    open fun feignLoggerLevel(): Logger.Level = Logger.Level.FULL
 
     @Bean
-    fun feignLogger(): Logger = Slf4jLogger()
+    open fun feignLogger(): Logger = Slf4jLogger()
 }

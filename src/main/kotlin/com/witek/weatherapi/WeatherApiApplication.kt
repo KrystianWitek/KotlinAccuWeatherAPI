@@ -8,7 +8,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients
 @SpringBootApplication
 @EnableFeignClients(basePackages = ["com.witek.weatherapi"])
 @EnableConfigurationProperties(AccuWeatherProperties::class)
-class WeatherApiApplication
+open class WeatherApiApplication
 
 fun main(args: Array<String>) {
     runApplication<WeatherApiApplication>(*args)

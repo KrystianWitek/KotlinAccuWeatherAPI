@@ -1,6 +1,7 @@
 package com.witek.weatherapi
 
 import com.witek.weatherapi.dto.CurrentWeatherResponse
+import com.witek.weatherapi.dto.ErrorResponse
 import feign.FeignException
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-private class WeatherController(
+class WeatherController(
     private val service: AccuWeatherService
 ) {
 
@@ -24,11 +25,11 @@ private class WeatherController(
     }
 
     @ExceptionHandler(FeignException::class)
-    fun handleFeignException(ex: FeignException): ResponseEntity<String> {
+    private fun handleFeignException(ex: FeignException): ResponseEntity<ErrorResponse> {
         logger.error(ex.message)
         return ResponseEntity
             .status(HttpStatus.SERVICE_UNAVAILABLE)
-            .body("Accuweather not available. Please try again later")
+            .body(ErrorResponse("Accuweather not available. Please try again later"))
     }
 
     private companion object {
